@@ -6,6 +6,7 @@ import {
   LoginScreen,
   ProfileScreen,
   SendMoneyScreen,
+  RegisterWithEmailPassword,
 } from "../screens";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -17,7 +18,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      initialRouteName="RegisterWithEmailPassword"
+      initialRouteName="LoginScreen"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -30,8 +31,8 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="LoginScreen"
+        component={LoginScreen}
         options={{
           tabBarLabel: "Home",
           // eslint-disable-next-line react/no-unstable-nested-components
@@ -75,8 +76,8 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="profile"
-        component={ProfileScreen}
+        name="RegisterWithEmailPassword"
+        component={RegisterWithEmailPassword}
         options={{
           tabBarLabel: "profile",
           tabBarIcon: ({ focused }) => (
