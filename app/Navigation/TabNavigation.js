@@ -33,6 +33,7 @@ const TabNavigation = () => {
         component={HomeScreen}
         options={{
           tabBarLabel: "Home",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name="home"
@@ -47,6 +48,7 @@ const TabNavigation = () => {
         component={DepositeScreen}
         options={{
           tabBarLabel: "deposite",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <Entypo
               name="wallet"
