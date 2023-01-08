@@ -1,16 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import SafeAreaWrapper from "../configs/SafeAreaWrapper"
-import tw from "twrnc";
-
-const WalletScreen = () => {
+const DepositeScreen = () => {
     return (
         <SafeAreaWrapper>
             <View>
-                <Text>WalletScreen</Text>
+                <Text>DepositeScreen</Text>
             </View>
         </SafeAreaWrapper>
     )
 }
 
-export default WalletScreen
+export default DepositeScreen
