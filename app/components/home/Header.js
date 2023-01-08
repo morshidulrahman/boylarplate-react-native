@@ -6,7 +6,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 const Header = () => {
   return (
     <View style={tw`flex-row justify-between items-center px-4 py-4`}>
-      <View style={tw`flex-row items-center`}>
+      <View style={tw`flex-row items-center rounded-full`}>
         <Image
           style={tw`rounded-full border border-[#0081C9]`}
           source={{
@@ -14,6 +14,7 @@ const Header = () => {
             width: 50,
             height: 50,
             resizeMode: "contain",
+
           }}
         />
         <View style={tw`ml-2`}>
