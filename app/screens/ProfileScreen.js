@@ -8,7 +8,7 @@ const ProfileScreen = () => {
         <Text>ProfileScreen</Text>
       </View>
     </SafeAreaWrapper>
-  )
+  );
 };
 
 export default ProfileScreen;

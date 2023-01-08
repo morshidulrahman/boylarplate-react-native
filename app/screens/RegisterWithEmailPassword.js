@@ -6,7 +6,8 @@ import SafeAreaWrapper from "../configs/SafeAreaWrapper";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../firebase.config";
 
-const RegisterWithEmailPassword = () => {
+const RegisterWithEmailPassword = ({ navigation }) => {
+  const [user, setUser] = useState();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,10 +24,11 @@ const RegisterWithEmailPassword = () => {
       return false;
     } else if (password === confirmPassword) {
       const auth = getAuth();
-      createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          setUser(user);
           // ...
         })
         .catch((err) => {
@@ -98,9 +100,11 @@ const RegisterWithEmailPassword = () => {
         />
         {error && (
           <Text
-            style={tw`p-3 bg-red-600 text-white text-lg text-center rounded-md capitalize`}
+            style={tw`p-3 ${
+              user ? "bg-green-600" : "bg-red-600"
+            } text-white text-lg text-center rounded-md capitalize`}
           >
-            {error}
+            {user ? "Registered" : error}
           </Text>
         )}
         <View style={tw` items-center mt-8`}>
