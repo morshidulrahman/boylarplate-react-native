@@ -1,14 +1,15 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/HomeScreen";
-import Settingscreen from "../screens/Settingscreen";
-import DashboardScreen from "../screens/DashboardScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import SearchScreen from "../screens/SearchScreen";
-import Login from "../screens/Login";
-
-import RegisterWithEmailPassword from "../screens/RegisterWithEmailPassword";
+import {
+  DepositeScreen,
+  HomeScreen,
+  ProfileScreen,
+  SendMoneyScreen,
+} from "../screens";
+import Entypo from "react-native-vector-icons/Entypo";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,37 +22,52 @@ const TabNavigation = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           borderTopWidth: 0,
-          paddingTop: 5,
-          paddingBottom: 20,
-          height: 80,
+          paddingTop: 10,
+          paddingBottom: 10,
+          height: 70,
         },
       }}
     >
       <Tab.Screen
         name="HomeScreen"
-        component={RegisterWithEmailPassword}
+        component={HomeScreen}
         options={{
           tabBarLabel: "Home",
-          tabBarIcon: () => <AntDesign name="bars" size={30} color={"red"} />,
-        }}
-      />
-      <Tab.Screen
-        name="dashboard"
-        component={DashboardScreen}
-        options={{
-          tabBarLabel: "dashboard",
-          tabBarIcon: () => (
-            <AntDesign name="barschart" size={30} color={"red"} />
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="home"
+              size={22}
+              color={focused ? "#0081C9" : "gray"}
+            />
           ),
         }}
       />
       <Tab.Screen
-        name="screen"
-        component={SearchScreen}
+        name="DepositeScreen"
+        component={DepositeScreen}
         options={{
-          tabBarLabel: "search",
-          tabBarIcon: () => (
-            <AntDesign name="search1" size={30} color={"red"} />
+          tabBarLabel: "deposite",
+          tabBarIcon: ({ focused }) => (
+            <Entypo
+              name="wallet"
+              size={22}
+              color={focused ? "#0081C9" : "gray"}
+            />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="SendMoneyScreen"
+        component={SendMoneyScreen}
+        options={{
+          tabBarLabel: "SendMoneyScreen",
+          tabBarIcon: ({ focused }) => (
+            <FontAwesome
+              name="send"
+              size={22}
+              color={focused ? "#0081C9" : "gray"}
+            />
           ),
         }}
       />
@@ -60,7 +76,13 @@ const TabNavigation = () => {
         component={ProfileScreen}
         options={{
           tabBarLabel: "profile",
-          tabBarIcon: () => <AntDesign name="user" size={30} color={"red"} />,
+          tabBarIcon: ({ focused }) => (
+            <FontAwesome5
+              name="user-alt"
+              size={22}
+              color={focused ? "#0081C9" : "gray"}
+            />
+          ),
         }}
       />
     </Tab.Navigator>

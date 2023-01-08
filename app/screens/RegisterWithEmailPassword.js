@@ -24,13 +24,13 @@ const RegisterWithEmailPassword = () => {
     >
       <View style={tw`bg-white px-6 py-8 rounded shadow-md text-black w-full`}>
         <Text style={tw`mb-8 text-2xl text-center`}>Sign up</Text>
-        {/* <TextInput
+        <TextInput
           type="text"
           style={tw`border border-grey-light w-full p-3 rounded mb-4`}
           placeholder="Full Name"
           value={fullName}
           onChangeText={(text) => setFullName(text)}
-        /> */}
+        />
         <TextInput
           mode="flat"
           label="E-mail"
