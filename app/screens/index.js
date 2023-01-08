@@ -4,3 +4,4 @@ export { default as DepositeScreen } from "./DepositeScreen";
 export { default as ProfileScreen } from "./ProfileScreen";
 export { default as SendMoneyScreen } from "./SendMoneyScreen";
 export { default as RegisterWithEmailPassword } from "./RegisterWithEmailPassword";
+export { default as LoginScreen } from "./LoginScreen";
