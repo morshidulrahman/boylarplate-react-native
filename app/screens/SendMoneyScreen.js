@@ -26,7 +26,7 @@ const SendMoneyScreen = () => {
               style={tw`rounded border border-gray-300 p-2`}
               placeholder="Enter Your Amount..."
               placeholderTextColor="gray"
-              autoFocus={true}
+              autoFocus={false}
               keyboardType="numeric"
             />
           </View>

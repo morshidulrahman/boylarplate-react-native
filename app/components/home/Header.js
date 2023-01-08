@@ -21,7 +21,9 @@ const Header = () => {
           <Text style={tw`text-[22px] font-bold`}>Welcome Back!</Text>
         </View>
       </View>
-      <TouchableOpacity style={tw`border border-gray-400 rounded-full w-10 h-10 flex-row justify-center items-center`} >
+      <TouchableOpacity
+        style={tw`border border-gray-400 rounded-full w-10 h-10 flex-row justify-center items-center`}
+      >
         <Text>
           <Ionicons
             name="notifications"

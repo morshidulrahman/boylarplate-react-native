@@ -1,14 +1,13 @@
 import { View, Text } from "react-native";
 import React from "react";
 import SafeAreaWrapper from "../configs/SafeAreaWrapper";
-const DashboardScreen = () => {
+
+const Detailsscreen = () => {
   return (
     <SafeAreaWrapper>
-      <View>
-        <Text>DashboardScreen</Text>
-      </View>
+      <Text>Detailsscreen</Text>
     </SafeAreaWrapper>
   );
 };
 
-export default DashboardScreen;
+export default Detailsscreen;
