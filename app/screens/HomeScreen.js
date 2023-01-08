@@ -1,18 +1,15 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { useNavigation } from '@react-navigation/native'
-import SafeAreaWrapper from "../configs/SafeAreaWrapper"
+import React from "react";
+import SafeAreaWrapper from "../configs/SafeAreaWrapper";
+import { Header, Service, Total_Balance } from "../components/home";
 
 const HomeScreen = () => {
+  return (
+    <SafeAreaWrapper>
+        <Header />
+        <Total_Balance />
+        <Service />
+    </SafeAreaWrapper>
+  );
+};
 
-    return (
-        <SafeAreaWrapper>
-            <View >
-                <Text>hello i am babu</Text>
-            </View>
-        </SafeAreaWrapper>
-
-    )
-}
-
-export default HomeScreen
+export default HomeScreen;
