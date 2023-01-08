@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "eslint . --ext .js,.jsx"
+    "lint": "eslint . --ext .js,.jsx",
+    "nodemon": "nodemon -r esm App.js"
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.0",
