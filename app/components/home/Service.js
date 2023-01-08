@@ -16,7 +16,7 @@ const Service = ({navigation}) => {
       <ServiceItem
         icon="money"
         color="green"
-        name="Recive Money"
+        name="Deposit Money"
         description="Manage Account"
         navigator={() => navigation.navigate("SurahListScreen")}
       />
