@@ -3,21 +3,22 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   DepositeScreen,
   HomeScreen,
+  LoginScreen,
   ProfileScreen,
   SendMoneyScreen,
+  RegisterWithEmailPassword,
 } from "../screens";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import RegisterWithEmailPassword from "../screens/RegisterWithEmailPassword";
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      initialRouteName="RegisterWithEmailPassword"
+      initialRouteName="LoginScreen"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -30,10 +31,11 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="RegisterWithEmailPassword"
-        component={RegisterWithEmailPassword}
+        name="LoginScreen"
+        component={LoginScreen}
         options={{
           tabBarLabel: "Home",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name="home"
@@ -48,6 +50,7 @@ const TabNavigation = () => {
         component={DepositeScreen}
         options={{
           tabBarLabel: "deposite",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <Entypo
               name="wallet"
@@ -73,8 +76,8 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="profile"
-        component={ProfileScreen}
+        name="RegisterWithEmailPassword"
+        component={RegisterWithEmailPassword}
         options={{
           tabBarLabel: "profile",
           tabBarIcon: ({ focused }) => (

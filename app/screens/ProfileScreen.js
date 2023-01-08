@@ -66,7 +66,7 @@ const ProfileScreen = ({ navigation }) => {
 
       </View>
     </SafeAreaWrapper>
-  )
+  );
 };
 
 export default ProfileScreen;

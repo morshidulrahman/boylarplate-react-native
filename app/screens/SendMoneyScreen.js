@@ -11,19 +11,19 @@ const SendMoneyScreen = () => {
           <Text style={tw`text-[30px] font-bold pt-4 text-center`}>
             Send Money
           </Text>
-          <View style={tw`my-2 mt-10`}>
-            <Text style={tw`font-semibold pb-2 text-lg`}>Email</Text>
+          <View style={tw`my-1 mt-10`}>
+            <Text style={tw`font-semibold pt-2 text-lg`}>Email</Text>
             <TextInput
-              style={tw`rounded border border-gray-300 p-2`}
+              style={tw`rounded border border-gray-300 p-3`}
               placeholder="Enter Your Email..."
               placeholderTextColor="gray"
               autoFocus={true}
             />
           </View>
-          <View style={tw`my-2`}>
-            <Text style={tw`font-semibold pb-2 text-lg`}>Amount</Text>
+          <View style={tw`my-1`}>
+            <Text style={tw`font-semibold pt-2 text-lg`}>Amount</Text>
             <TextInput
-              style={tw`rounded border border-gray-300 p-2`}
+              style={tw`rounded border border-gray-300 p-3`}
               placeholder="Enter Your Amount..."
               placeholderTextColor="gray"
               autoFocus={false}

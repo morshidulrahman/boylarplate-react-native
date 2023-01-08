@@ -8,6 +8,7 @@ import TabNavigation from "./TabNavigation";
 import {
   DepositeScreen,
   HomeScreen,
+  LoginScreen,
   ProfileScreen,
   SendMoneyScreen,
 } from "../screens";
@@ -24,6 +25,7 @@ const MainNavigation = () => {
             <Stack.Screen name="DepositeScreen" component={DepositeScreen} />
             <Stack.Screen name="SendMoneyScreen" component={SendMoneyScreen} />
             <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+            <Stack.Screen name="LoginScreen" component={LoginScreen} />
           </Stack.Navigator>
         </TailwindProvider>
       </Provider>
