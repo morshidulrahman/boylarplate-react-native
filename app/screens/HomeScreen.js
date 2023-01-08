@@ -5,9 +5,9 @@ import { Header, Service, Total_Balance } from "../components/home";
 const HomeScreen = () => {
   return (
     <SafeAreaWrapper>
-        <Header />
-        <Total_Balance />
-        <Service />
+      <Header />
+      <Total_Balance />
+      <Service />
     </SafeAreaWrapper>
   );
 };
