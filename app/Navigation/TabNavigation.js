@@ -10,13 +10,14 @@ import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import RegisterWithEmailPassword from "../screens/RegisterWithEmailPassword";
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="RegisterWithEmailPassword"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -29,8 +30,8 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="RegisterWithEmailPassword"
+        component={RegisterWithEmailPassword}
         options={{
           tabBarLabel: "Home",
           // eslint-disable-next-line react/no-unstable-nested-components
