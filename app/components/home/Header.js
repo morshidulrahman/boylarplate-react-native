@@ -8,7 +8,7 @@ const Header = () => {
     <View style={tw`flex-row justify-between items-center px-4 py-4`}>
       <View style={tw`flex-row items-center`}>
         <Image
-          style={tw`rounded-full`}
+          style={tw`rounded-full border border-[#0081C9]`}
           source={{
             uri: "https://picsum.photos/200",
             width: 50,

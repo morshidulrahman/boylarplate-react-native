@@ -18,7 +18,7 @@ const Service = ({navigation}) => {
         color="green"
         name="Deposit Money"
         description="Manage Account"
-        navigator={() => navigation.navigate("SurahListScreen")}
+        navigator={() => navigation.navigate("DepositeScreen")}
       />
     </View>
   );

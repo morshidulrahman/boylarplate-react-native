@@ -3,7 +3,7 @@ import React from "react";
 import tw from "twrnc";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-const Total_Balance = () => {
+const Total_Balance = ({navigation}) => {
   return (
     <View style={tw`flex-row justify-center items-center px-4 pb-1`}>
       <View
@@ -13,7 +13,9 @@ const Total_Balance = () => {
           <Text style={tw`text-white text-[18px]`}>Total_Balance</Text>
           <Text style={tw`text-white text-[30px] font-bold mt-2`}>$10</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+         onPress={() => navigation.navigate("SendMoneyScreen")}
+        >
           <Text>
             <Ionicons
               name="ios-add-circle"
