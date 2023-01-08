@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
-import Settingscreen from '../screens/Settingscreen';
-import DashboardScreen from '../screens/DashboardScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import AntDesign from 'react-native-vector-icons/AntDesign'
-import SearchScreen from '../screens/SearchScreen'
+import { WalletScreen, DashboardScreen, HomeScreen, ProfileScreen } from "../screens"
+import Entypo from 'react-native-vector-icons/Entypo'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+
 
 const Tab = createBottomTabNavigator();
 
@@ -17,11 +16,12 @@ const TabNavigation = () => {
                 {
                     headerShown: false,
                     tabBarShowLabel: false,
+                    tabBarActiveTintColor: "red",
                     tabBarStyle: {
                         borderTopWidth: 0,
-                        paddingTop: 5,
-                        paddingBottom: 20,
-                        height: 80,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        height: 70,
 
                     }
                 }}>
@@ -29,23 +29,23 @@ const TabNavigation = () => {
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: () => (
-                        <AntDesign name="bars" size={30} color={"red"} />
+                        <Ionicons name="home" size={22} color={"gray"} />
                     ),
                 }}
             />
-            <Tab.Screen name="dashboard"
-                component={DashboardScreen}
+            <Tab.Screen name="WalletScreen"
+                component={WalletScreen}
                 options={{
                     tabBarLabel: 'dashboard',
                     tabBarIcon: () => (
-                        <AntDesign name="barschart" size={30} color={"red"} />
+                        <Entypo name="wallet" size={22} color={"gray"} />
                     ),
                 }} />
-            <Tab.Screen name="screen" component={SearchScreen}
+            <Tab.Screen name="DashboardScreen" component={DashboardScreen}
                 options={{
-                    tabBarLabel: 'search',
+                    tabBarLabel: 'DashboardScreen',
                     tabBarIcon: () => (
-                        <AntDesign name="search1" size={30} color={"red"} />
+                        <Ionicons name="md-stats-chart" size={22} color={"gray"} />
                     ),
                 }}
             />
@@ -53,7 +53,7 @@ const TabNavigation = () => {
                 options={{
                     tabBarLabel: 'profile',
                     tabBarIcon: () => (
-                        <AntDesign name="user" size={30} color={"red"} />
+                        <FontAwesome5 name="user-alt" size={22} color={"gray"} />
                     ),
                 }}
             />

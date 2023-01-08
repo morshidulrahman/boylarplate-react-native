@@ -1,14 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import SafeAreaWrapper from "../configs/SafeAreaWrapper"
-const DashboardScreen = () => {
+const WalletScreen = () => {
     return (
         <SafeAreaWrapper>
             <View>
-                <Text>DashboardScreen</Text>
+                <Text>WalletScreen</Text>
             </View>
         </SafeAreaWrapper>
     )
 }
 
-export default DashboardScreen
+export default WalletScreen
