@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { WalletScreen, HomeScreen, ProfileScreen, SendMoneyScreen } from "../screens"
+import { DepositeScreen, HomeScreen, ProfileScreen, SendMoneyScreen } from "../screens"
 import Entypo from 'react-native-vector-icons/Entypo'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
@@ -33,10 +33,10 @@ const TabNavigation = () => {
                     ),
                 }}
             />
-            <Tab.Screen name="WalletScreen"
-                component={WalletScreen}
+            <Tab.Screen name="DepositeScreen"
+                component={DepositeScreen}
                 options={{
-                    tabBarLabel: 'dashboard',
+                    tabBarLabel: 'deposite',
                     tabBarIcon: ({ focused }) => (
                         <Entypo name="wallet" size={22} color={focused ? "#0081C9" : "gray"} />
                     ),
