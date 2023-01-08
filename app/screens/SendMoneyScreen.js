@@ -12,7 +12,7 @@ const SendMoneyScreen = () => {
                 </Text>
             </View>
             <View style={tw`p-4 w-full bg-white`}>
-                <View className="">
+                <View>
                     <Text style={tw`font-semibold pb-2 text-lg`}>Enter email</Text>
                     <TextInput
                         style={tw`rounded-md border px-2 py-1`}
