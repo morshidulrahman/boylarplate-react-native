@@ -19,6 +19,15 @@ const DepositeScreen = () => {
                             autoFocus={true}
                         />
                     </View>
+                    <View style={tw`my-2 `}>
+                        <Text style={tw`font-semibold pb-2 text-lg`}>Card Sm</Text>
+                        <TextInput
+                            style={tw`rounded border border-gray-300 p-2`}
+                            placeholder=""
+                            placeholderTextColor="gray"
+                            autoFocus={true}
+                        />
+                    </View>
                     <View style={tw`my-2`}>
                         <Text style={tw`font-semibold pb-2 text-lg`}>Amount</Text>
                         <TextInput
@@ -49,4 +58,4 @@ const DepositeScreen = () => {
     )
 }
 
-export default DepositeScreen
+export default DepositeScreen;

@@ -1,6 +1,6 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import SafeAreaWrapper from "../configs/SafeAreaWrapper"
+import { View, Text } from "react-native";
+import React from "react";
+import SafeAreaWrapper from "../configs/SafeAreaWrapper";
 const ProfileScreen = () => {
   return (
     <SafeAreaWrapper>
@@ -9,6 +9,6 @@ const ProfileScreen = () => {
       </View>
     </SafeAreaWrapper>
   )
-}
+};
 
 export default ProfileScreen;

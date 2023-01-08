@@ -19,52 +19,69 @@ const RegisterWithEmailPassword = () => {
   };
 
   return (
-    <SafeAreaWrapper
-      style={tw`flex-1 items-center justify-center bg-stone-700`}
-    >
-      <View style={tw`bg-white px-6 py-8 rounded shadow-md text-black w-full`}>
-        <Text style={tw`mb-8 text-2xl text-center`}>Sign up</Text>
-        <TextInput
-          type="text"
-          style={tw`border border-grey-light w-full p-3 rounded mb-4`}
-          placeholder="Full Name"
-          value={fullName}
-          onChangeText={(text) => setFullName(text)}
-        />
-        <TextInput
-          mode="flat"
-          label="E-mail"
-          placeholder="Enter Email"
-          textContentType="emailAddress"
-          keyboardType="email-address"
-          autoCapitalize="none"
-          type="text"
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-          style={tw`border border-grey-200 w-full p-3 rounded mb-4`}
-        />
-
-        {/* <TextInput
-          type="password"
-          style={tw`border border-grey-light w-full p-3 rounded mb-4`}
-          placeholder="Password"
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-        />
-        <TextInput
-          type="password"
-          style={tw`border border-grey-light w-full p-3 rounded mb-4`}
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChangeText={(text) => setConfirmPassword(text)}
-        /> */}
-        <TouchableOpacity onPress={handleRegister}>
-          <Text
-            style={tw`w-full text-center py-3 rounded bg-green-500 text-white my-1`}
-          >
-            Create Account
+    <SafeAreaWrapper>
+      <View style={tw`p-4 w-full bg-white h-full  justify-center items-center`}>
+        <View style={tw`w-full`}>
+          <Text style={tw`text-[30px] font-bold py-4 mb-7 text-center`}>
+            Sign Up
           </Text>
-        </TouchableOpacity>
+          <View>
+            <Text style={tw`font-semibold text-lg`}>Name</Text>
+            <TextInput
+              type="text"
+              style={tw`rounded border border-gray-300 p-3 my-1`}
+              placeholder="Enter Full Name..."
+              value={fullName}
+              onChangeText={(text) => setFullName(text)}
+            />
+          </View>
+          <View>
+            <Text style={tw`font-semibold text-lg`}>Email</Text>
+            <TextInput
+              mode="flat"
+              label="E-mail"
+              placeholder="Enter Email..."
+              textContentType="emailAddress"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              type="text"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+              style={tw`rounded border border-gray-300 p-3 my-1`}
+            />
+          </View>
+
+          <View>
+            <Text style={tw`font-semibold text-lg`}>Password</Text>
+            <TextInput
+              type="password"
+              style={tw`rounded border border-gray-300 p-3 my-1`}
+              placeholder="Password..."
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+            />
+          </View>
+
+          <View>
+            <TextInput
+              type="password"
+              style={tw`rounded border border-gray-300 p-3 my-1`}
+              placeholder="Confirm Password..."
+              value={confirmPassword}
+              onChangeText={(text) => setConfirmPassword(text)}
+            />
+          </View>
+          <View style={tw` items-center mt-8`}>
+            <TouchableOpacity
+              style={tw`bg-[#0081C9] w-1/2 p-3 rounded-full text-center`}
+              onPress={console.log("SendMoneyScreen")}
+            >
+              <Text style={tw`text-center text-white font-bold text-[16px]`}>
+                Registation
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     </SafeAreaWrapper>
   );
