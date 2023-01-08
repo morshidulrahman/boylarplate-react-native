@@ -23,57 +23,64 @@ const RegisterWithEmailPassword = () => {
       style={tw`flex-1 items-center justify-center bg-stone-700`}
     >
       <View style={tw`bg-white px-6 py-8 rounded shadow-md text-black w-full`}>
-        <Text style={tw`mb-8 text-2xl text-center`}>Sign up</Text>
+        <Text style={tw`text-[30px] font-bold py-4 mb-7 text-center`}>
+          Sign up
+        </Text>
+        <Text style={tw`font-semibold text-lg`}>Name</Text>
         <TextInput
           mode="flat"
           label="Full-Name"
           type="text"
           textContentType="name"
           keyboardType="default"
-          style={tw`border border-grey-300 w-full p-3 rounded mb-4`}
-          placeholder="Full Name"
+          style={tw`rounded border border-gray-300 p-3 my-1`}
+          placeholder="Enter Full Name..."
           value={fullName}
           onChangeText={(text) => setFullName(text)}
         />
+        <Text style={tw`font-semibold text-lg`}>Email</Text>
         <TextInput
           mode="flat"
           label="E-mail"
-          placeholder="Enter Email"
+          placeholder="Enter Email..."
           textContentType="emailAddress"
           keyboardType="email-address"
           autoCapitalize="none"
           value={email}
           onChangeText={(text) => setEmail(text)}
-          style={tw`border border-grey-300 w-full p-3 rounded mb-4`}
+          style={tw`rounded border border-gray-300 p-3 my-1`}
         />
-
+        <Text style={tw`font-semibold text-lg`}>Password</Text>
         <TextInput
           mode="flat"
           label="Password"
-          placeholder="Enter Password"
+          placeholder="Password..."
           keyboardType="visible-password"
           textContentType="password"
           value={password}
           onChangeText={(text) => setPassword(text)}
-          style={tw`border border-grey-300 w-full p-3 rounded mb-4`}
+          style={tw`rounded border border-gray-300 p-3 my-1`}
         />
         <TextInput
           mode="flat"
           label="Confirm-Password"
-          placeholder="Confirm Password"
+          placeholder="Confirm Password..."
           keyboardType="visible-password"
           textContentType="password"
           value={confirmPassword}
           onChangeText={(text) => setConfirmPassword(text)}
-          style={tw`border border-grey-light w-full p-3 rounded mb-4`}
+          style={tw`rounded border border-gray-300 p-3 my-1`}
         />
-        <TouchableOpacity onPress={handleRegister}>
-          <Text
-            style={tw`w-full text-center py-3 rounded bg-green-500 text-white my-1`}
+        <View style={tw` items-center mt-8`}>
+          <TouchableOpacity
+            style={tw`bg-[#0081C9] w-1/2 p-3 rounded-full text-center`}
+            onPress={console.log("SendMoneyScreen")}
           >
-            Create Account
-          </Text>
-        </TouchableOpacity>
+            <Text style={tw`text-center text-white font-bold text-[16px]`}>
+              Registration
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaWrapper>
   );

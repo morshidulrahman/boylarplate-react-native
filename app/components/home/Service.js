@@ -3,9 +3,11 @@ import React from "react";
 import tw from "twrnc";
 import ServiceItem from "./ServiceItem";
 
-const Service = ({navigation}) => {
+const Service = ({ navigation }) => {
   return (
-    <View style={tw`bg-gray-100 flex-row flex-wrap justify-between items-center py-5 px-4 `}>
+    <View
+      style={tw`bg-gray-100 flex-row flex-wrap justify-between items-center py-5 px-4 `}
+    >
       <ServiceItem
         icon="send"
         color="orange"
@@ -18,7 +20,7 @@ const Service = ({navigation}) => {
         color="green"
         name="Deposit Money"
         description="Manage Account"
-        navigator={() => navigation.navigate("SurahListScreen")}
+        navigator={() => navigation.navigate("DepositeScreen")}
       />
     </View>
   );

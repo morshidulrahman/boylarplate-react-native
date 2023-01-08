@@ -15,7 +15,7 @@ const SendMoneyScreen = () => {
             <Text style={tw`font-semibold pb-2 text-lg`}>Email</Text>
             <TextInput
               style={tw`rounded border border-gray-300 p-2`}
-              placeholder="Enter Your Email"
+              placeholder="Enter Your Email..."
               placeholderTextColor="gray"
               autoFocus={true}
             />
@@ -24,9 +24,9 @@ const SendMoneyScreen = () => {
             <Text style={tw`font-semibold pb-2 text-lg`}>Amount</Text>
             <TextInput
               style={tw`rounded border border-gray-300 p-2`}
-              placeholder="Enter Your Amount"
+              placeholder="Enter Your Amount..."
               placeholderTextColor="gray"
-              autoFocus={true}
+              autoFocus={false}
               keyboardType="numeric"
             />
           </View>
