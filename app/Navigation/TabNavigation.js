@@ -31,8 +31,8 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="LoginScreen"
-        component={LoginScreen}
+        name="HomeScreen"
+        component={HomeScreen}
         options={{
           tabBarLabel: "Home",
           // eslint-disable-next-line react/no-unstable-nested-components
@@ -66,6 +66,7 @@ const TabNavigation = () => {
         component={SendMoneyScreen}
         options={{
           tabBarLabel: "SendMoneyScreen",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <FontAwesome
               name="send"
@@ -80,6 +81,7 @@ const TabNavigation = () => {
         component={RegisterWithEmailPassword}
         options={{
           tabBarLabel: "profile",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <FontAwesome5
               name="user-alt"

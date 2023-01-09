@@ -7,7 +7,7 @@ const SendMoneyScreen = () => {
   return (
     <SafeAreaWrapper>
       <View style={tw`p-4 w-full bg-white h-full  justify-center items-center`}>
-        <View style={tw`w-full px-3`}>
+        <View style={tw`w-full`}>
           <Text style={tw`text-[30px] font-bold pt-4 text-center`}>
             Send Money
           </Text>
