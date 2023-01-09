@@ -32,7 +32,6 @@ const RegisterScreen = ({ navigation }) => {
           // Signed in
           const user = userCredential.user;
           dispatch(getCurrentUser(user));
-          navigation.navigate("HomeScreen");
           // ...
         })
         .catch((err) => {

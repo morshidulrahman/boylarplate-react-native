@@ -106,7 +106,6 @@ const DepositeScreen = () => {
           <View style={tw` items-center mt-10`}>
             <TouchableOpacity
               style={tw`bg-[#0081C9] w-1/2 p-3 rounded-full text-center`}
-              // eslint-disable-next-line no-undef
               onPress={() => DepositedHandlebar()}
             >
               <Text style={tw`text-center text-white font-bold text-[16px]`}>

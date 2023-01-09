@@ -14,7 +14,6 @@ const Header = () => {
             width: 50,
             height: 50,
             resizeMode: "contain",
-
           }}
         />
         <View style={tw`ml-2`}>

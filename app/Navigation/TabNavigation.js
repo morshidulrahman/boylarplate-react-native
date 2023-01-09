@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      initialRouteName="LoginScreen"
+      initialRouteName="HomeScreen"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,

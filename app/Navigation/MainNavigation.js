@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import TabNavigation from "./TabNavigation";
 import {
   DepositeScreen,
-  HomeScreen,
   LoginScreen,
   ProfileScreen,
   SendMoneyScreen,
@@ -26,15 +25,14 @@ const MainNavigation = () => {
       <TailwindProvider>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           {!currentUser.length ? (
+            <Stack.Screen name="TabNavigation" component={TabNavigation} />
+          ) : (
             <Stack.Screen
               name="AccountNavigator"
               component={AccountNavigator}
             />
-          ) : (
-            <Stack.Screen name="TabNavigation" component={TabNavigation} />
           )}
 
-          <Stack.Screen name="HomeScreen" component={HomeScreen} />
           <Stack.Screen name="DepositeScreen" component={DepositeScreen} />
           <Stack.Screen name="SendMoneyScreen" component={SendMoneyScreen} />
           <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
