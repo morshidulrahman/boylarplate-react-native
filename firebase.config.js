@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { getApps, initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -7,6 +8,7 @@ import { getApps, initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyAJMg_amOT_BWnyTxX7G5dBGaqcV7rghcw",
   authDomain: "banking-94f32.firebaseapp.com",
+  databaseURL: "https://banking-94f32-default-rtdb.firebaseio.com",
   projectId: "banking-94f32",
   storageBucket: "banking-94f32.appspot.com",
   messagingSenderId: "405650490783",
@@ -15,3 +17,4 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app =
   getApps.length > 0 ? getApps() : initializeApp(firebaseConfig);
+export const database = getDatabase(app);

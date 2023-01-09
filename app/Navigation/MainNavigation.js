@@ -2,8 +2,7 @@ import React from "react";
 import { TailwindProvider } from "tailwindcss-react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Provider } from "react-redux";
-import { store } from "../Redux/store";
+import { useSelector } from "react-redux";
 import TabNavigation from "./TabNavigation";
 import {
   DepositeScreen,
@@ -12,23 +11,36 @@ import {
   ProfileScreen,
   SendMoneyScreen,
 } from "../screens";
+import AccountNavigator from "./AccountNavigator";
 const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
+  const { currentUser } = useSelector((state) => state.currentUser);
+  console.log(
+    "🚀 ~ file: MainNavigation.js:19 ~ MainNavigation ~ currentUser",
+    currentUser
+  );
+
   return (
     <NavigationContainer>
-      <Provider store={store}>
-        <TailwindProvider>
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <TailwindProvider>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          {!currentUser.length ? (
+            <Stack.Screen
+              name="AccountNavigator"
+              component={AccountNavigator}
+            />
+          ) : (
             <Stack.Screen name="TabNavigation" component={TabNavigation} />
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
-            <Stack.Screen name="DepositeScreen" component={DepositeScreen} />
-            <Stack.Screen name="SendMoneyScreen" component={SendMoneyScreen} />
-            <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-            <Stack.Screen name="LoginScreen" component={LoginScreen} />
-          </Stack.Navigator>
-        </TailwindProvider>
-      </Provider>
+          )}
+
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen name="DepositeScreen" component={DepositeScreen} />
+          <Stack.Screen name="SendMoneyScreen" component={SendMoneyScreen} />
+          <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+          <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        </Stack.Navigator>
+      </TailwindProvider>
     </NavigationContainer>
   );
 };

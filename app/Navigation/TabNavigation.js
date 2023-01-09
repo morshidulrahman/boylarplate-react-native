@@ -3,10 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   DepositeScreen,
   HomeScreen,
-  LoginScreen,
   ProfileScreen,
   SendMoneyScreen,
-  RegisterWithEmailPassword,
 } from "../screens";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -31,8 +29,8 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="LoginScreen"
-        component={LoginScreen}
+        name="HomeScreen"
+        component={HomeScreen}
         options={{
           tabBarLabel: "Home",
           // eslint-disable-next-line react/no-unstable-nested-components
@@ -76,8 +74,8 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="RegisterWithEmailPassword"
-        component={RegisterWithEmailPassword}
+        name="ProfileScreen"
+        component={ProfileScreen}
         options={{
           tabBarLabel: "profile",
           tabBarIcon: ({ focused }) => (

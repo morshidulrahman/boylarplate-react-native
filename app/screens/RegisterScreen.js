@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import tw from "twrnc";
 import SafeAreaWrapper from "../configs/SafeAreaWrapper";
-
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { getCurrentUser } from "../Redux/features/currentUserSlice";
 import { app } from "../../firebase.config";
 
-const RegisterWithEmailPassword = ({ navigation }) => {
-  const [user, setUser] = useState();
+const RegisterScreen = ({ navigation }) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setError(null);
@@ -20,15 +22,17 @@ const RegisterWithEmailPassword = ({ navigation }) => {
 
   const handleRegister = async () => {
     setError(null);
+
     if (!fullName && !email && !password && !confirmPassword) {
       return false;
     } else if (password === confirmPassword) {
-      const auth = getAuth();
+      const auth = getAuth(app);
       await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          setUser(user);
+          dispatch(getCurrentUser(user));
+          navigation.navigate("HomeScreen");
           // ...
         })
         .catch((err) => {
@@ -100,11 +104,9 @@ const RegisterWithEmailPassword = ({ navigation }) => {
         />
         {error && (
           <Text
-            style={tw`p-3 ${
-              user ? "bg-green-600" : "bg-red-600"
-            } text-white text-lg text-center rounded-md capitalize`}
+            style={tw`p-3 bg-red-600 text-white text-lg text-center rounded-md capitalize`}
           >
-            {user ? "Registered" : error}
+            {error}
           </Text>
         )}
         <View style={tw` items-center mt-8`}>
@@ -122,4 +124,4 @@ const RegisterWithEmailPassword = ({ navigation }) => {
   );
 };
 
-export default RegisterWithEmailPassword;
+export default RegisterScreen;
