@@ -64,6 +64,7 @@ const TabNavigation = () => {
         component={SendMoneyScreen}
         options={{
           tabBarLabel: "SendMoneyScreen",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <FontAwesome
               name="send"
@@ -78,6 +79,7 @@ const TabNavigation = () => {
         component={ProfileScreen}
         options={{
           tabBarLabel: "profile",
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ focused }) => (
             <FontAwesome5
               name="user-alt"

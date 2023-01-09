@@ -90,6 +90,12 @@ const LoginScreen = ({ navigation }) => {
               </Text>
             </TouchableOpacity>
           </View>
+          <Text
+            style={tw`my-5 text-center`}
+            onPress={() => navigation.navigate("RegisterWithEmailPassword")}
+          >
+            I need to Registration first.
+          </Text>
         </View>
       </View>
     </SafeAreaWrapper>

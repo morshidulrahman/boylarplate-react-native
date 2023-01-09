@@ -2,19 +2,17 @@ import React, { useEffect, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import tw from "twrnc";
 import SafeAreaWrapper from "../configs/SafeAreaWrapper";
+
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from "react-redux";
-import { getCurrentUser } from "../Redux/features/currentUserSlice";
 import { app } from "../../firebase.config";
 
-const RegisterScreen = ({ navigation }) => {
+const RegisterWithEmailPassword = ({ navigation }) => {
+  const [user, setUser] = useState();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setError(null);
@@ -22,16 +20,15 @@ const RegisterScreen = ({ navigation }) => {
 
   const handleRegister = async () => {
     setError(null);
-
     if (!fullName && !email && !password && !confirmPassword) {
       return false;
     } else if (password === confirmPassword) {
-      const auth = getAuth(app);
+      const auth = getAuth();
       await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          dispatch(getCurrentUser(user));
+          setUser(user);
           // ...
         })
         .catch((err) => {
@@ -139,4 +136,4 @@ const RegisterScreen = ({ navigation }) => {
   );
 };
 
-export default RegisterScreen;
+export default RegisterWithEmailPassword;
