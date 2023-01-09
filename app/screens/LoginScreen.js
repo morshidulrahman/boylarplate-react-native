@@ -4,12 +4,15 @@ import tw from "twrnc";
 import SafeAreaWrapper from "../configs/SafeAreaWrapper";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect } from "react";
+import { getCurrentUser } from "../Redux/features/currentUserSlice";
+import { useDispatch } from "react-redux";
+import { app } from "../../firebase.config";
 
 const LoginScreen = ({ navigation }) => {
-  const [user, setUser] = useState();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setError(null);
@@ -18,12 +21,12 @@ const LoginScreen = ({ navigation }) => {
   const loginHandler = async () => {
     setError(null);
 
-    const auth = getAuth();
+    const auth = getAuth(app);
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        setUser(user);
+        dispatch(getCurrentUser(user));
 
         navigation.navigate("HomeScreen");
         // ...
@@ -74,11 +77,9 @@ const LoginScreen = ({ navigation }) => {
           </View>
           {error && (
             <Text
-              style={tw`p-3 ${
-                user ? "bg-green-600" : "bg-red-600"
-              } text-white text-lg text-center rounded-md capitalize`}
+              style={tw`p-3 bg-red-600 text-white text-lg text-center rounded-md capitalize`}
             >
-              {user ? "Logged in" : error}
+              {error}
             </Text>
           )}
           <View style={tw` items-center mt-8`}>
